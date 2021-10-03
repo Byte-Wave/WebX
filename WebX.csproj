@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>0.0.1</Version>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <Authors>Abdagić Hamza</Authors>
+    <Copyright>Abdagić Hamza</Copyright>
+    <PackageProjectUrl>https://github.com/Ghostrider0470/WebX</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Ghostrider0470/WebX</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <PackageTags>ViewRenderer, Email Renderer, Razor Syntax Renderer, View to string, View2String, Razor to String, C# Email HTML, Async</PackageTags>
+    <NeutralLanguage>English</NeutralLanguage>
+    <PackageReleaseNotes>- Added ViewRenderer Service which will grant functionality  to the user to convert view data with the model to a string which can then be used as an email response</PackageReleaseNotes>
+    <Description>Dot Net Core Utilities:
+ViewRender which can be used to send a view as email response
+</Description>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="WebX.EmailService\.vs\ProjectSettings.json" />
+    <Content Include="WebX.EmailService\.vs\VSWorkspaceState.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="WebX.EmailService\.vs\slnx.sqlite" />
+    <None Include="WebX.EmailService\WebX.EmailService.csproj" />
+    <None Include="WebX.ViewRenderer\WebX.ViewRenderer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Helpers\" />
+    <Folder Include="WebX.EmailService\.vs\WebX.EmailService\v16\" />
+    <Folder Include="WebX.EmailService\Properties\PublishProfiles\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="nuget add WebX.EmailService.1.0.0.nupkg -source C:\Users\hamza\source\Workspaces\GitHub" />
+  </Target>
+
+</Project>
