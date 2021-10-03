@@ -5,12 +5,10 @@
 NuGet Package:
 | Description |  Link |
 | ------ | ------ |
-| NuGet Page | https://www.nuget.org/packages/CryptX/ |
-| Download NuGet Package | https://www.nuget.org/api/v2/package/CryptX |
+| NuGet Page | https://www.nuget.org/packages/WebX.ViewRender/ |
+| Download NuGet Package | https://www.nuget.org/api/v2/package/WebX.ViewRender |
 
 ### Usage:
-> #### 1st Option: (Quick and Easy)
-```C#
 // Step one: Create a partial view under Views folder
 
 // Step two: In the Startup.cs, under ConfigureServices add this line in order to use dependancy injection
